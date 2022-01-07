@@ -14,7 +14,7 @@ export default ({ todos }: Props) => {
   return (
     <React.Fragment>
       {sections.map((sectionData) => (
-        <Section {...sectionData} />
+        <Section key={sectionData.title} {...sectionData} />
       ))}
     </React.Fragment>
   );
