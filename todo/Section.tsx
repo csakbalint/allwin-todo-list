@@ -3,9 +3,8 @@ import React, { useState } from 'react';
 import Todo from './Todo';
 import { Section, Todo as TTodo } from './todo.interfaces';
 
-const sortTodos = (todos: TTodo[]) => {
-  return [];
-};
+const sortTodos = (todos: TTodo[]) =>
+  orderBy(todos, ['done', 'priority'], ['asc', 'desc']);
 
 export default (section: Section) => {
   const [todos, setTodos] = useState<TTodo[]>(sortTodos(section.todos));
