@@ -22,7 +22,7 @@ export default (section: Section) => {
       <h2 className="pb-2 ml-2 font-bold">{section.title}</h2>
       <ul className="divide-y border rounded">
         {todos.map((todo) => (
-          <Todo {...todo} updateTodo={updateTodo} />
+          <Todo key={todo.title} {...todo} updateTodo={updateTodo} />
         ))}
       </ul>
     </div>
