@@ -1,5 +1,5 @@
 import { orderBy, find } from 'lodash';
-import React from 'react';
+import React, { useState } from 'react';
 import Todo from './Todo';
 import { Section, Todo as TTodo } from './todo.interfaces';
 
@@ -8,7 +8,7 @@ const sortTodos = (todos: TTodo[]) => {
 };
 
 export default (section: Section) => {
-  const [todos, setTodos] = React.useState(sortTodos(section.todos));
+  const [todos, setTodos] = useState<TTodo[]>(sortTodos(section.todos));
 
   const updateTodo = (title: string, done: boolean) => {
     const todo = find(todos, { title });
